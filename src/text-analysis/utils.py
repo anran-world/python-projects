@@ -1,5 +1,40 @@
 import sys
 import os
+import jieba
+import time
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+
+def mark():
+    return time.time()
+
+
+def draw_world_cloud(words):
+    # 创建词云对象
+    w = WordCloud(font_path="msyh.ttc", width=1000, height=500, max_words=300, background_color='white')
+    wordcloud = w.generate(words)
+    return wordcloud
+
+
+def show_picture(wordcloud):
+    # 显示词云图像
+    plt.figure(figsize=(10, 5))
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis('off')
+    plt.show()
+
+
+def split(words, remove_list, length):
+    list = []
+    g_tokens = jieba.cut(words)
+    for token in g_tokens:
+        if len(token) > length:
+            list.append(token)
+
+    print(f'分词个数：{len(list)}')
+    result = [x for x in list if x not in remove_list]
+    return ' '.join(result)
 
 
 def read_file(file_path):

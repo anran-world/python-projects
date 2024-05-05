@@ -29,8 +29,8 @@ def main():
         # 输出排序后的结果
         for word, count in sorted_word_count:
             print(f"{word}: {count}")
-        with open(output_file_path, 'w', encoding='utf-8') as f:
-            f.write(text)
+        # with open(output_file_path, 'w', encoding='utf-8') as f:
+        #     f.write(text)
 
 
 if __name__ == '__main__':

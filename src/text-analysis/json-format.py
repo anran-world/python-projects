@@ -3,7 +3,7 @@ import json
 
 def main():
     input_file_path = '../../data/result.json'
-    output_file_path = '../../data/result.txt'
+    output_file_path = '../../data/test.txt'
 
     with open(input_file_path, 'r', encoding='utf-8') as f:
         data_from_file = json.load(f)
@@ -36,7 +36,7 @@ def main():
 
 def main1():
     input_file_path = '../../data/result.json'
-    output_file_path = '../../data/result1.txt'
+    output_file_path = '../../data/from.txt'
 
     with open(input_file_path, 'r', encoding='utf-8') as f:
         data_from_file = json.load(f)
@@ -69,3 +69,5 @@ def main1():
 
 if __name__ == '__main__':
     main()
+    main1()
+
